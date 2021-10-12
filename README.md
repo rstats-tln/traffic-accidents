@@ -1,6 +1,6 @@
 # traffic-accidents
 
-Road traffic accidents data from Estonia 2011-2019 by [Estonian Transport Administration](https://www.transpordiamet.ee/en). 
+Road traffic accidents data from Estonia 2011-2020 by [Estonian Transport Administration](https://www.transpordiamet.ee/en). 
 
 ## Data
 
