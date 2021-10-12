@@ -8,6 +8,8 @@ File "Liiklusõnnetused 2011-2020.xlsx" was downloaded from <https://avaandmed.e
 preprocessed to data/liiklusonnetused.csv using scripts/import.R script.
 
 ```r
+> library(readr); library(here)
+> onnetused <- read_csv(here("data/liiklusonnetused.csv"))
 > onnetused
 # A tibble: 12,632 x 55
    juhtumi_nr  ühissõidukijuhi_os… valgustus_1 valgustus_2       veoautojuhi_osal… tüüpskeemi_nr
