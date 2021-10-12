@@ -8,15 +8,15 @@ library(rstan)
 rstan_options(auto_write = TRUE)
 options(mc.cores = parallel::detectCores())
 
-andmed <- read_csv(here("data/liiklusonnetuste_andmed.csv"))
+onnetused <- read_csv(here("data/liiklusonnetused.csv"), col_types = cols(juhtumi_nr = col_character()))
 
-andmed %>% 
+onnetused %>% 
   ggplot() +
   geom_bar(aes(hukkunuid, fill = liiklusõnnetuse_liik_1), position = "stack") +
   facet_wrap(~ ilmastik_1, scales = "free")
 
-data <- andmed %>% 
-  select(kuupäev, hukkunuid, liik = liiklusõnnetuse_liik_1, ilm = ilmastik_1) %>% 
+data <- onnetused %>% 
+  select(toimumisaeg, hukkunuid, liik = liiklusõnnetuse_liik_1, ilm = ilmastik_1) %>% 
   filter(ilm != "Märkimata")
 
 
@@ -34,6 +34,9 @@ priors <- c(
   prior("normal(0, 1)", class = "b"),
   prior("beta(12, 1)", class = "hu")
 )
+
+
+if(!dir.exists(here("models"))) dir.create(here("models"))
 
 mod1.0 <- brm(
   formula = hukkunuid ~ liik + ilm,
