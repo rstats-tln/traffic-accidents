@@ -1,11 +1,12 @@
 # traffic-accidents
 
-Road traffic accidents data from Estonia 2011-2019. 
+Road traffic accidents data from Estonia 2011-2019 by [Estonian Transport Administration](https://www.transpordiamet.ee/en). 
 
 ## Data
 
-File "Liiklusõnnetused 2011-2020.xlsx" was downloaded from <https://avaandmed.eesti.ee/datasets/inimkannatanutega-liiklusonnetuste-andmed> and 
-preprocessed to data/liiklusonnetused.csv using scripts/import.R script.
+File "Liiklusõnnetused 2011-2020.xlsx" was downloaded from Estonian open data portal <https://avaandmed.eesti.ee/datasets/inimkannatanutega-liiklusonnetuste-andmed>, lightly preprocessed and saved to `data/liiklusonnetused.csv` using `scripts/import.R script`.
+
+## Import
 
 ```r
 > library(readr); library(here)
@@ -43,7 +44,7 @@ preprocessed to data/liiklusonnetused.csv using scripts/import.R script.
 
 ```
 
-Variables
+## Variables
 
  [1] "juhtumi_nr" -- case number                                
  [2] "ühissõidukijuhi_osalusel" -- involving a public transport              
@@ -100,3 +101,7 @@ Variables
 [53] "isikuid" -- persons involved                                      
 [54] "sõidukeid" -- nr of vechicles involved                                    
 [55] "vigastatuid" -- nr of injured
+
+
+Drive safely!
+
